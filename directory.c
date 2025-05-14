@@ -15,10 +15,10 @@ int directory_findname(struct unixfilesystem *fs, const char *name,
 
     if ((dir_in.i_mode & IFDIR) == 0) return -1;  // no es directorio
 
-    int dir_size = inode_getsize(&dir_in);  // tamaño dir
+    int dir_size = inode_getsize(&dir_in);
     int blk = 0, bytes = 0;
 
-    char pad[14];  // nombre ajustado
+    char pad[14];
     memset(pad, 0, sizeof(pad));
     strncpy(pad, name, sizeof(pad));
 
